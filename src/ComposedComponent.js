@@ -38,7 +38,7 @@ export default ComposedComponent => class extends React.Component {
         } else if(this.props.form.schema.type === 'boolean') {
             value = e.target.checked;
         } else if(this.props.form.schema.type === 'date' || this.props.form.schema.type === 'array') {
-            value = e;
+            value = e.target.value;
         } else { // string
             value = e.target.value;
         }

@@ -106,7 +106,8 @@ var integer = function(name, schema, options) {
 };
 
 var date = function(name, schema, options) {
-    if (stripNullType(schema.type) === 'date') {
+    var isDateTime = stripNullType(schema.type) === 'string' && stripNullType(schema.format) === 'date-time'
+    if (stripNullType(schema.type) === 'date' || isDateTime) {
         var f = stdFormObj(name, schema, options);
         f.key  = options.path;
         f.type = 'date';
@@ -222,7 +223,7 @@ var array = function array(name, schema, options) {
 };
 
 var defaults = {
-    string:  [select, text],
+    string:  [select, date, text],
     object:  [fieldset],
     number:  [number],
     integer: [integer],

@@ -20,7 +20,7 @@ class Date extends React.Component {
 
 
     onDatePicked(empty, date) {
-        this.props.onChangeValidate(date);
+        this.props.onChangeValidate({target: {value: date}});
     }
 
     render() {

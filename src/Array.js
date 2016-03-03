@@ -80,7 +80,7 @@ class Array extends React.Component {
                 model: newModel
             }
         );
-        this.props.onChangeValidate(this.state.model);
+        this.props.onChangeValidate({target: {value: this.state.model}});
         //console.log('After append this.state.model', newModel);
     }
 
@@ -93,7 +93,7 @@ class Array extends React.Component {
                 model: newModel
             }
         );
-        this.props.onChangeValidate(this.state.model);
+        this.props.onChangeValidate({target: {value: this.state.model}});
     }
 
     setIndex(index) {
