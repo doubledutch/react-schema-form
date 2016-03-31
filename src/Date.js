@@ -31,6 +31,7 @@ class Date extends React.Component {
                     autoOk={true}
                     hintText={this.props.form.title}
                     onChange={this.onDatePicked}
+                    value={this.props.value}
                     onShow={null}
                     onDismiss={null}
                     disabled={this.props.form.readonly}
